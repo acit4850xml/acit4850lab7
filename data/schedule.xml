@@ -165,6 +165,7 @@ and open the template in the editor.
             <classtype type="lecture"/>
         </course>
     </timeslots>
+   
     
     <!--
     courses facet
@@ -172,10 +173,10 @@ and open the template in the editor.
     
     
     <course course="ACIT4620">
-        <room>SW1-2009</room>
-        <instructor>Bethany Edmunds</instructor>
-        <classtype type="lecture"/>
-    </course>
+            <room>SW9-206</room>
+            <instructor>Stephen Fabiszewski</instructor>
+            <classtype type="lecture"/>
+        </course>
     
         
     <course course="ACIT4620">
@@ -429,5 +430,14 @@ and open the template in the editor.
     
     
     
-
+    <day type="Monday">
+        <timeslots type="1">
+        <course course="ACIT4620">
+            <room>SW9-206</room>
+            <instructor>Stephen Fabiszewski</instructor>
+            <classtype type="lecture"/>
+        </course>
+        </timeslots>
+    </day>
+    
 </timetable>

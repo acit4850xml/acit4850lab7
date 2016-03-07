@@ -15,7 +15,7 @@ and open the template in the editor.
 <!ELEMENT __ROOT__ ANY>
 <!ATTLIST __ROOT__ version CDATA #REQUIRED>
 
-<!ELEMENT timetable (timeslots+, courses+, days+)>
+<!ELEMENT timetable (timeslots+, course+, day+)>
 
 <!--
 Each timeslot has been assigned a code for segregation
