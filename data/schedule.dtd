@@ -15,7 +15,7 @@ and open the template in the editor.
 <!ELEMENT __ROOT__ ANY>
 <!ATTLIST __ROOT__ version CDATA #REQUIRED>
 
-<!ELEMENT timeslots (course, day, instructor, room, classtype)>
+<!ELEMENT timetable (timeslots+, courses+, days+)>
 
 <!--
 Each timeslot has been assigned a code for segregation
@@ -26,16 +26,20 @@ Each timeslot has been assigned a code for segregation
 5:30-6:30 - 9, 6:30-7:30 - 10
 7:30-8:30 - 11, 8:30-9:30 - 12
 -->
-<!ELEMENT timeslots (#PCDATA)>
+
+<!ELEMENT timeslots (course+)>
 <!ATTLIST timeslots
     type (1|2|3|4|5|6|7|8|9|10|11|12) #REQUIRED
 >
 
 <!-- Assigned course with number -->
-<!ELEMENT course (#PCDATA)>
+<!ELEMENT course (room,instructor,classtype)>
+<!ATTLIST course
+    course (ACIT4620|ACIT4770|ACIT4910|ACIT4650|ACIT4660|ACIT4850) "ACIT4620"
+>
 
 <!-- Each day as an option -->
-<!ELEMENT day (#PCDATA)>
+<!ELEMENT day (timeslots+)>
 <!ATTLIST day 
     type (Monday|Tuesday|Wednesday|Thursday|Friday) "Monday"
 >
@@ -51,11 +55,3 @@ Each timeslot has been assigned a code for segregation
 <!ATTLIST classtype
     type (lab|lecture|tutorial) "lab"
 >
-    
-
-
-
-
-
-
-
