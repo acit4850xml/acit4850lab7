@@ -35,7 +35,7 @@ Each timeslot has been assigned a code for segregation
 <!-- Assigned course with number -->
 <!ELEMENT course (room,instructor,classtype)>
 <!ATTLIST course
-    course (ACIT4620|ACIT4770|ACIT4910|ACIT4650|ACIT4660) "ACIT4620"
+    course (ACIT4620|ACIT4770|ACIT4910|ACIT4650|ACIT4660|ACIT4850) "ACIT4620"
 >
 
 <!-- Each day as an option -->
