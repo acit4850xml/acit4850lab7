@@ -200,7 +200,7 @@ and open the template in the editor.
             <room>SW9-206</room>
             <instructor>Stephen Fabiszewski</instructor>
             <classtype type="lecture"/>
-        </courses>
+    </courses>
     
         
     <courses course="ACIT4620">
@@ -570,12 +570,12 @@ and open the template in the editor.
     
     <days type="Monday">
         <timeslots type="1">
-        <course course="ACIT4620">
-            <room>SW9-206</room>
-            <instructor>Stephen Fabiszewski</instructor>
-            <classtype type="lecture"/>
-            <day type="Monday"/>
-        </course>
+            <course course="ACIT4620">
+                <room>SW9-206</room>
+                <instructor>Stephen Fabiszewski</instructor>
+                <classtype type="lecture"/>
+                <day type="Monday"/>
+            </course>
         </timeslots>
     </days>
     
