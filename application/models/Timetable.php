@@ -95,5 +95,43 @@ class Timetable extends CI_Model
         else
             return null;
     }
-         
+    
+    function getDayCodes()
+    {
+        $days = array('Monday','Tuesday','Wednesday','Thursday','Friday');
+        return $days;
+        
+    }
+    
+    function getTimeslotCode()
+    {
+        $timeslot = array(1,2,3,4,5,6,7,8,9);
+        return $timeslot;
+    }
+    
+    public function findBookingTimeSlot($day,$slot)
+    {
+        foreach($this->timeslots as $timeslot)
+            foreach($timeslot[$slot] as $course=>$value)
+                if($timeslot[$slot][$course]->day == $day)
+                    return $this->timeslots[$slot][$course];
+        return null;
+    }
+    
+    public function findBookingCourse($day,$slot)
+    {
+        foreach($this->courses as $courses)
+            if($courses->day == $day && $course->timeslot == $slot)
+                return $courses;
+        return null;    
+        
+    }
+    
+    public function findBookingDay($day,$slot)
+    {
+        foreach($this->days as $days)
+            if(isset($days[$day][$slot]))
+                return $days[$day][$slot];
+        return null;
+    }
 }
