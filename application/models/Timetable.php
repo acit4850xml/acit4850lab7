@@ -27,30 +27,29 @@ class Timetable extends CI_Model
         {
             foreach($time->course as $course)
             {
-                $record = new stdClass();
-                $record->timeslot = (string)$time['type'];
-                $record->course = (string) $time->course['course'];
-                $record->room = (string) $time->course->room;
-                $record->instructor = (string) $time->course->instructor ;
-                $record->classtype = (string) $time->course->classtype['type'] ;
-                $record->day = (string) $time->course->day['type'] ;
+                $record = new Booking();
+                $record->setSlot((string)$time['type']);
+                $record->setCourse((string) $course['course']);
+                $record->setRoom((string) $course->room);
+                $record->setInstructor((string) $course->instructor );
+                $record->setClasstype((string) $course->classtype['type'] ) ;
+                $record->setDay((string) $course->day['type']);
             
-                $this->timeslots[$record->timeslot][$record->course] = $record;
+                $this->timeslots[] = $record;
             }
         }
         
         //build a full list using courses
         foreach($this->xml->courses as $course)
         {
-            $record = new stdClass();
-            $record->timeslot = (string)$course->timeslot['type'];
-            $record->course = (string)$course['course'];
-            $record->day = (string)$course->day['type'];
-            $record->room = (string)$course->room;
-            $record->instructor = (string)$course->instructor;
-            $record->classstype = (string)$course->classtype['type'];
+            $record = new Booking();
+            $record->setSlot((string)$course->timeslot['type']);
+            $record->setDay((string)$course->day['type']);
+            $record->setRoom((string)$course->room);
+            $record->setInstructor((string)$course->instructor);
+            $record->setClassType((string)$course->classtype['type']);
             
-            $this->courses[$record->course] = $record;
+            $this->courses[] = $record;
         }
         
         //build a fulllist using days
@@ -58,80 +57,154 @@ class Timetable extends CI_Model
         {
             foreach($days->timeslots as $timeslots)
             {
-                $record = new stdClass();
-                $record->timeslot = (string)$days->timeslots['type'];
-                $record->course = (string)$timeslots->course['course'];
-                $record->room = (string)$timeslots->course->room;
-                $record->instructor = (string)$timeslots->course->instructor;
-                $record->classtype = (string)$timeslots->course->classtype['type'];
-                $record->day =(string)$timeslots->course->day['type'];
+                $record = new Booking();
+                $record->setSlot((string)$timeslots['type']);
+                $record->setCourse((string)$timeslots->course['course']);
+                $record->setRoom((string)$timeslots->course->room);
+                $record->setInstructor((string)$timeslots->course->instructor);
+                $record->setClassType((string)$timeslots->course->classtype['type']);
+                $record->setDay((string)$timeslots->course->day['type']);
                 
-                $this->days[$record->day][$record->timeslot] = $record;
+                $this->days[] = $record;
             }
         }
         
     }
     
-    function getTimeslots($timeslot, $course)
+    function getTimeslots()
     {
-        if(isset($this->timeslots[$timeslot][$course]))
-            return $this->timeslots[$timeslot][$course];       
-        else
-            return null;
+        return $this->timeslots;
     }
     
-    function getCourses($course)
+    function getCourses()
     {
-        if(isset($this->courses[$course]))
-            return $this->course[$course];
-        else 
-            return null;
+        return $this->courses;
     }
     
-    function getDays($day,$timeslot)
+    function getDays()
     {
-        if(isset($this->days[$day][$timeslot]))
-            return $this->days[$day][$timeslot];
-        else
-            return null;
+        return $this->days;
     }
     
     function getDayCodes()
     {
-        $days = array('Monday','Tuesday','Wednesday','Thursday','Friday');
+        $days = array(array('day'=>'Monday'), array('day'=>'Tuesday'), array('day'=>'Wednesday'), array('day'=>'Thursday'), array('day'=>'Friday'));
         return $days;
         
     }
     
     function getTimeslotCode()
     {
-        $timeslot = array(1,2,3,4,5,6,7,8,9);
+        $timeslot = array(array('slot'=>'1'),array('slot'=>'2'),array('slot'=>'3'),array('slot'=>'4'),array('slot'=>'5'),array('slot'=>'6'),array('slot'=>'7'),array('slot'=>'8'),array('slot'=>'9'));
         return $timeslot;
     }
     
     public function findBookingTimeSlot($day,$slot)
     {
-        foreach($this->timeslots as $timeslot)
-            foreach($timeslot[$slot] as $course=>$value)
-                if($timeslot[$slot][$course]->day == $day)
-                    return $this->timeslots[$slot][$course];
-        return null;
+        $result = array();
+        foreach ($this->timeslots as $time)
+        {
+            if($time->getDay() == $day && $time->getSlot() == $slot){
+                $result[] = $time;       
+            }
+        }
+        return $result;
     }
     
     public function findBookingCourse($day,$slot)
     {
-        foreach($this->courses as $courses)
-            if($courses->day == $day && $course->timeslot == $slot)
-                return $courses;
-        return null;    
-        
+        $result = array();
+        foreach ($this->courses as $course)
+        {
+            if($course->getDay() == $day && $course->getSlot() == $slot){
+                $result[] = $course;       
+            }
+        }
+        return $result;
+    
     }
     
     public function findBookingDay($day,$slot)
     {
-        foreach($this->days as $days)
-            if(isset($days[$day][$slot]))
-                return $days[$day][$slot];
-        return null;
+        $result = array();
+        foreach ($this->days as $dayCheck)
+        {
+            if($dayCheck->getDay() == $day && $dayCheck->getSlot() == $slot){
+                $result[] = $dayCheck;       
+            }
+        }
+        return $result;
+    
+    }
+}
+
+class Booking extends CI_Model 
+{
+    protected $day;
+    protected $slot;
+    protected $course;
+    protected $instructor;
+    protected $room;
+    
+    public function __construct() 
+    {
+        parent::__construct();
+        $this->slot = '';
+        $this->course = '';
+        $this->day = '';
+        $this->instructor = '';
+        $this->room = '';
+        $this->classtype = '';
+        
+     
+    }
+    
+    public function setCourse($course)
+    {
+        $this->course = $course;
+    }
+    public function setSlot($slot)
+    {
+        $this->slot = $slot;
+    }
+    public function setDay($day)
+    {
+        $this->day = $day;
+    }
+    public function setInstructor($instructor)
+    {
+        $this->instructor = $instructor;
+    }
+    public function setRoom($room)
+    {
+        $this->room = $room;
+    }
+    public function setClassType($classType)
+    {
+        $this->classtype = $classType;
+    }
+    public function getCourse()
+    {
+        return $this->course;
+    }
+    public function getDay()
+    {
+        return $this->day;
+    }
+    public function getSlot()
+    {
+        return $this->slot;
+    }
+    public function getInstructor()
+    {
+        return $this->instructor;
+    }
+    public function getRoom()
+    {
+        return $this->room;
+    }
+    public function getClassType()
+    {
+        return $this->classtype;
     }
 }
