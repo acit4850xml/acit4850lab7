@@ -41,7 +41,7 @@ and open the template in the editor.
     <timeslots type="3">
         <course course="ACIT4620">
             <room>SE12-306</room>
-            <instructor>Bethany Edmunds</instructor>    
+            <instructor>Bethany Edmunds</instructor>
             <classtype type="lab"/>
             <day type="Tuesday"/>
         </course>
@@ -200,7 +200,7 @@ and open the template in the editor.
             <room>SW9-206</room>
             <instructor>Stephen Fabiszewski</instructor>
             <classtype type="lecture"/>
-    </courses>
+        </courses>
     
         
     <courses course="ACIT4620">
@@ -567,5 +567,16 @@ and open the template in the editor.
     </days>
     
     
+    
+    <days type="Monday">
+        <timeslots type="1">
+        <course course="ACIT4620">
+            <room>SW9-206</room>
+            <instructor>Stephen Fabiszewski</instructor>
+            <classtype type="lecture"/>
+            <day type="Monday"/>
+        </course>
+        </timeslots>
+    </days>
     
 </timetable>
