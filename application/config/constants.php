@@ -1,7 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-define('DATAPATH', './data/');
-define('XMLSUFFIX','.xml');
 
 /*
 |--------------------------------------------------------------------------
