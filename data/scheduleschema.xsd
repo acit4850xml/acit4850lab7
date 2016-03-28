@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!--Data type for courses-->
+    <xs:simpleType name="Tcourses">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A][C][I][T]\d{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!--Datatype for possible times-->
+    <xs:simpleType name="Ttime">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="6"/>
+            <xs:enumeration value="7"/>
+            <xs:enumeration value="8"/>
+            <xs:enumeration value="9"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+    <!--Data Type for classtype -->
+    <xs:simpleType name="Tclasstype">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="lab"/>
+            <xs:enumeration value="lecture"/>
+            <xs:enumeration value="tutorial"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Data Type for possible days of the week -->
+    <xs:simpleType name="Tdays">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Monday"/>
+            <xs:enumeration value="Tuesday"/>
+            <xs:enumeration value="Wednesday"/>
+            <xs:enumeration value="Thursday"/>
+            <xs:enumeration value="Friday"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Data Type for rooms -->
+    <xs:simpleType name="Troom">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\w{2}\d{1,2}[-]\d+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Data Type for Instructor Names -->
+    <xs:simpleType name="Tinstructor">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\w+\s\w+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!--root element timetable that contains the 3 facets-->
+    <xs:element name="timetable">
+        <xs:complexType>
+            <xs:sequence>
+                
+                <!--timeslot facets -->
+                <xs:element name="timeslots" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="course" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="Troom" name="room"/>
+                                        <xs:element type="Tinstructor" name="instructor"/>
+                                        <xs:element name="classtype">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute type="Tclasstype" name="type" use="optional"/>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="day">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute type="Tdays" name="type" use="optional"/>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="Tcourses" name="course" use="optional"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="Ttime" name="type" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+                
+              
+                
+                
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
