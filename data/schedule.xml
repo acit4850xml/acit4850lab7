@@ -5,9 +5,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<!DOCTYPE timetable SYSTEM 'schedule.dtd'>
+<!--<!DOCTYPE timetable SYSTEM 'schedule.dtd'>-->
 
-<timetable>
+<timetable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="scheduleschema.xsd">
     
     <!--
     timeslot facet
@@ -222,7 +222,7 @@ and open the template in the editor.
     <courses course="ACIT4650">
         <timeslot type = "5"/>
         <day type="Monday"/>
-        <room>SW9 206</room>
+        <room>SW9-206</room>
         <instructor>Medhat Elmasry</instructor>
         <classtype type="lecture"/>
     </courses>
@@ -230,7 +230,7 @@ and open the template in the editor.
     <courses course="ACIT4650">
         <timeslot type = "9"/>
         <day type="Tuesday"/>
-        <room>SW9 206</room>
+        <room>SW9-206</room>
         <instructor>Medhat Elmasry</instructor>
         <classtype type="lecture"/>
     </courses>
