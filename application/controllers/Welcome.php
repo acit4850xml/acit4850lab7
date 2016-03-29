@@ -26,17 +26,39 @@ class Welcome extends Application {
         
         function index()
         {
+            
+                    //homepage validation
+            $doc = new DOMDocument();
+            $doc->load('./data/schedule.xml');
+            
+            $result = ''; 
+            libxml_use_internal_errors(true);
+            if ($doc->schemaValidate('./data/scheduleschema.xsd'))         
+            {
+          
+                $result = "XML Validated with Schema";       
+            }
+            
+            else 
+            {
+                $result = "<b>Error</b><br/>";
+                foreach (libxml_get_errors() as $error) 
+                {
+                    $result .= $error->message . '<br/>';
+                }
+            }
+            
             $timetable = new Timetable();
             $facetArray =  array();
             
             $this->load->helper('directory');
             //$candidates = directory_map(DATAPATH);
             $this->data['timetable'] = 'timetable';
-
+            $this->data['validate'] = $result;
             $this->data['pagebody'] = 'homepage';
             $this->data['days'] = $timetable->getDayCodes();
             $this->data['times'] = $timetable->getTimeslotCode();
-            
+            libxml_clear_errors();
             //$this->data['dump'] = var_dump($timetable->getTimeslots());
             
             foreach($timetable->getTimeslots() as $record){

@@ -1,3 +1,5 @@
+<div>{validate}</div>
+
 <div class="timetable">
   {facets}
     <p>{facet} facet</p>
