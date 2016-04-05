@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!--<!DOCTYPE timetable SYSTEM 'schedule.dtd'>-->
+
+<?xml-stylesheet type="text/xsl" href="timeCentric.xsl" ?>    
+<timetable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="scheduleschema.xsd">
+
+    <!--
+    timeslot facet
+    -->
+    
+    <timeslots type="1">
+        <course course="ACIT4660">
+            <room>SW9-206</room>
+            <instructor>Stephen Fabiszewski</instructor>
+            <classtype type="lecture"/>
+            <day type="Friday"/>
+        </course>
+    </timeslots>
+    
+    <timeslots type="2">
+        <course course="ACIT4660">
+            <room>SW9-206</room>
+            <instructor>Stephen Fabiszewski</instructor>
+            <classtype type="lecture"/>
+            <day type="Friday"/>
+        </course>
+        
+        <course course="ACIT4910">
+            <room>SW5-1840</room>
+            <instructor>Richard Chau</instructor>
+            <classtype type="lecture"/>
+            <day type="Thursday"/>
+        </course>
+    </timeslots>
+    
+    <timeslots type="3">
+        <course course="ACIT4620">
+            <room>SE12-306</room>
+            <instructor>Bethany Edmunds</instructor>    
+            <classtype type="lab"/>
+            <day type="Tuesday"/>
+        </course>
+        
+        <course course="ACIT4660">
+            <room>SE12-306</room>
+            <instructor>Stephen Fabiszewski</instructor>
+            <classtype type="lab"/>
+            <day type="Wednesday"/>
+        </course>
+        
+        <course course="ACIT4850">
+            <room>SE12-320</room>
+            <instructor>Jim Parry</instructor>
+            <classtype type="lab"/>
+            <day type="Thursday"/>
+        </course>
+    </timeslots>
+    
+    <timeslots type="4">
+        <course course="ACIT4620">
+            <room>SE12-306</room>
+            <instructor>Bethany Edmunds</instructor>
+            <classtype type="lab"/>
+            <day type="Tuesday"/>
+        </course>
+        
+        <course course="ACIT4660">
+            <room>SE12-306</room>
+            <instructor>Stephen Fabiszewski</instructor>
+            <classtype type="lab"/>
+            <day type="Wednesday"/>
+        </course>
+        
+        <course course="ACIT4850">
+            <room>SE12-320</room>
+            <instructor>Jim Parry</instructor>
+            <classtype type="lab"/>
+            <day type="Thursday"/>
+        </course>
+    </timeslots>
+
+    <timeslots type="5">
+        <course course="ACIT4620">
+            <room>SW1-2009</room>
+            <instructor>Bethany Edmunds</instructor>
+            <classtype type="lecture"/>
+            <day type="Monday"/>
+        </course>
+        
+        <course course="ACIT4650">
+            <room>SW9-206</room>
+            <instructor>Medhat Elmasry</instructor>
+            <classtype type="lecture"/>
+            <day type="Tuesday"/>
+        </course>
+        
+        <course course="ACIT4850">
+            <room>SW3-1750</room>
+            <instructor>Jim Parry</instructor>
+            <classtype type="lecture"/>
+            <day type="Wednesday"/>
+        </course>
+       
+    </timeslots>
+    
+    <timeslots type="6">
+        <course course="ACIT4770">
+            <room>SE12-306</room>
+            <instructor>Trevor Lord</instructor>
+            <classtype type="tutorial"/>
+            <day type="Monday"/>
+        </course>
+        
+        <course course="ACIT4650">
+            <room>SE12-306</room>
+            <instructor>Medhat Elmasry</instructor>
+            <classtype type="lab"/>
+            <day type="Tuesday"/>
+        </course>
+        
+        <course course="ACIT4850">
+            <room>SW3-1750</room>
+            <instructor>Jim Parry</instructor>
+            <classtype type="lecture"/>
+            <day type="Wednesday"/>
+        </course>
+        
+        <course course="ACIT4910">
+            <room>SE12-306</room>
+            <instructor>Richard Chau</instructor>
+            <classtype type="lab"/>
+            <day type="Thursday"/>
+        </course>
+    </timeslots>
+    
+    <timeslots type="7">
+        <course course="ACIT4770">
+            <room>SE12-306</room>
+            <instructor>Trevor Lord</instructor>
+            <classtype type="tutorial"/>
+            <day type="Monday"/>
+        </course>
+        
+        <course course="ACIT4650">
+            <room>SE12-306</room>
+            <instructor>Medhat Elmasry</instructor>
+            <classtype type="lab"/>
+            <day type="Tuesday"/>
+        </course>
+        
+        <course course="ACIT4910">
+            <room>SE12-306</room>
+            <instructor>Richard Chau</instructor>
+            <classtype type="lab"/>
+            <day type="Thursday"/>
+        </course>
+    </timeslots>
+    
+    
+    <timeslots type="8">
+        <course course="ACIT4910">
+            <room>SW9-206</room>
+            <instructor>Richard Chau</instructor>
+            <classtype type="lecture"/>
+            <day type="Monday"/>
+        </course>
+        
+        <course course="ACIT4620">
+            <room>SW3-3615</room>
+            <instructor>Bethany Edmunds</instructor>
+            <classtype type="lecture"/>
+            <day type="Tuesday"/>
+        </course>
+        
+    </timeslots>
+    
+    <timeslots type="9">
+        <course course="ACIT4650">
+            <room>SE6-205</room>
+            <instructor>Medhat Elmasry</instructor>
+            <classtype type="lecture"/>
+            <day type="Monday"/>
+        </course>
+    </timeslots>
+   
+    
+    <!--
+    courses facet
+    -->
+    
+    
+    <courses course="ACIT4620">
+            <timeslot type = "1"/>
+            <day type="Friday"/>
+            <room>SW9-206</room>
+            <instructor>Stephen Fabiszewski</instructor>
+            <classtype type="lecture"/>
+    </courses>
+    
+        
+    <courses course="ACIT4620">
+        <timeslot type = "3"/>
+        <day type="Tuesday"/>
+        <room>SE12-306</room>
+        <instructor>Bethany Edmunds</instructor>
+        <classtype type="lab"/>
+    </courses>
+    
+    <courses course="ACIT4620">
+        <timeslot type = "4"/>
+        <day type="Tuesday"/>
+        <room>SE12-306</room>
+        <instructor>Bethany Edmunds</instructor>
+        <classtype type="lab"/>
+    </courses>
+        
+    <courses course="ACIT4650">
+        <timeslot type = "5"/>
+        <day type="Monday"/>
+        <room>SW9-206</room>
+        <instructor>Medhat Elmasry</instructor>
+        <classtype type="lecture"/>
+    </courses>
+        
+    <courses course="ACIT4650">
+        <timeslot type = "9"/>
+        <day type="Tuesday"/>
+        <room>SW9-206</room>
+        <instructor>Medhat Elmasry</instructor>
+        <classtype type="lecture"/>
+    </courses>
+        
+    <courses course="ACIT4650">
+        <timeslot type = "6"/>
+        <day type="Tuesday"/>
+        <room>SE12-306</room>
+        <instructor>Farnaz Dargahi</instructor>
+        <classtype type="lab"/>
+    </courses>
+    
+    <courses course="ACIT4650">
+        <timeslot type = "7"/>
+        <day type="Tuesday"/>
+        <room>SE12-306</room>
+        <instructor>Farnaz Dargahi</instructor>
+        <classtype type="lab"/>
+    </courses>
+        
+    <courses course="ACIT4660">
+        <timeslot type = "1"/>
+        <day type="Friday"/>
+        <room>SW9-206</room>
+        <instructor>Steve Fabiszewski</instructor>
+        <classtype type="lecture"/>
+    </courses>
+    
+    <courses course="ACIT4660">
+        <timeslot type = "2"/>
+        <day type="Friday"/>
+        <room>SW9-206</room>
+        <instructor>Steve Fabiszewski</instructor>
+        <classtype type="lecture"/>
+    </courses>
+        
+    <courses course="ACIT4660">
+        <timeslot type = "3"/>
+        <day type="Wednesday"/>
+        <room>SE12-306</room>
+        <instructor>Steve Fabiszewski</instructor>
+        <classtype type="lab"/>
+    </courses>
+    
+    <courses course="ACIT4660">
+        <timeslot type = "4"/>
+        <day type="Wednesday"/>
+        <room>SE12-306</room>
+        <instructor>Steve Fabiszewski</instructor>
+        <classtype type="lab"/>
+    </courses>
+        
+    <courses course="ACIT4770">
+        <timeslot type = "6"/>
+        <day type="Monday"/>
+        <room>SE12-306</room>
+        <instructor>Trevor Lord</instructor>
+        <classtype type="tutorial"/>
+    </courses>
+    
+    <courses course="ACIT4770">
+        <timeslot type = "7"/>
+        <day type="Monday"/>
+        <room>SE12-306</room>
+        <instructor>Trevor Lord</instructor>
+        <classtype type="tutorial"/>
+    </courses>
+        
+    <courses course="ACIT4850">
+        <timeslot type = "5"/>
+        <day type="Wednesday"/>
+        <room>SW3-1750</room>
+        <instructor>Jim Parry</instructor>
+        <classtype type="lecture"/>
+    </courses>
+    
+    <courses course="ACIT4850">
+        <timeslot type = "6"/>
+        <day type="Wednesday"/>
+        <room>SW3-1750</room>
+        <instructor>Jim Parry</instructor>
+        <classtype type="lecture"/>
+    </courses>
+        
+    <courses course="ACIT4850">
+        <timeslot type = "3"/>
+        <day type="Thursday"/>
+        <room>SE12-320</room>
+        <instructor>Jim Parry</instructor>
+        <classtype type="lab"/>
+    </courses>
+        
+    <courses course="ACIT4850">
+        <timeslot type = "4"/>
+        <day type="Thursday"/>
+        <room>SE12-320</room>
+        <instructor>Jim Parry</instructor>
+        <classtype type="lab"/>
+    </courses>    
+    
+    <courses course="ACIT4910">
+        <timeslot type = "2"/>
+        <day type="Thursday"/>
+        <room>SW5-1840</room>
+        <instructor>Richard Chau</instructor>
+        <classtype type="lecture"/>
+    </courses>
+    
+    <courses course="ACIT4910">
+        <timeslot type = "7"/>
+        <day type="Thursday"/>
+        <room>SE12-306</room>
+        <instructor>Richard Chau</instructor>
+        <classtype type="lab"/>
+    </courses>
+    
+    <courses course="ACIT4910">
+        <timeslot type = "6"/>
+        <day type="Thursday"/>
+        <room>SE12-306</room>
+        <instructor>Richard Chau</instructor>
+        <classtype type="lab"/>
+    </courses>
+    <!--
+    days facet
+    -->
+    <days type="Monday">
+        <timeslots type="5">
+            <course course="ACIT4620">
+                <room>SW1-2009</room>
+                <instructor>Bethany Edmunds</instructor>
+                <classtype type="lecture"/>
+                <day type="Monday"/>
+            </course>
+        </timeslots>
+        
+        <timeslots type="6">
+            <course course="ACIT4770">
+                <room>SE12-306</room>
+                <instructor>Trevor Lord</instructor>
+                <classtype type="tutorial"/>
+                <day type="Monday"/>
+            </course>
+        </timeslots>
+        
+        <timeslots type="7">
+            <course course="ACIT4770">
+                <room>SE12-306</room>
+                <instructor>Trevor Lord</instructor>
+                <classtype type="tutorial"/>
+                <day type="Monday"/>
+            </course>
+        </timeslots>
+        
+        <timeslots type="8">
+            <course course="ACIT4910">
+                <room>SW9-206</room>
+                <instructor>Richard Chau</instructor>
+                <classtype type="lecture"/>
+                <day type="Monday"/>
+            </course>
+        </timeslots>
+        
+        <timeslots type="9">
+            <course course="ACIT4650">
+                <room>SE6-205</room>
+                <instructor>Medhat Elmasry</instructor>
+                <classtype type="lecture"/>
+                <day type="Monday"/>
+            </course>
+        </timeslots>
+    </days>
+    
+    <days type="Tuesday">
+        <timeslots type="3">
+            <course course="ACIT4620">
+                <room>SE12-306</room>
+                <instructor>Bethany Edmunds</instructor>
+                <classtype type="lab"/>
+                <day type="Tuesday"/>
+            </course>
+        </timeslots>
+         
+        <timeslots type="4">
+            <course course="ACIT4620">
+                <room>SE12-306</room>
+                <instructor>Bethany Edmunds</instructor>
+                <classtype type="lab"/>
+                <day type="Tuesday"/>
+            </course>
+        </timeslots>
+         
+        <timeslots type="5">
+            <course course="ACIT4650">
+                <room>SW9-206</room>
+                <instructor>Medhat Elmasry</instructor>
+                <classtype type="lecture"/>
+                <day type="Tuesday"/>
+            </course>
+        </timeslots>
+         
+        <timeslots type="6">
+            <course course="ACIT4650">
+                <room>SE12-306</room>
+                <instructor>Medhat Elmasry</instructor>
+                <classtype type="lab"/>
+                <day type="Tuesday"/>
+            </course>
+        </timeslots>
+         
+        <timeslots type="7">
+            <course course="ACIT4650">
+                <room>SE12-306</room>
+                <instructor>Medhat Elmasry</instructor>
+                <classtype type="lab"/>
+                <day type="Tuesday"/>
+            </course>
+        </timeslots>
+         
+        <timeslots type="8">
+            <course course="ACIT4620">
+                <room>SW3-3615</room>
+                <instructor>Bethany Edmunds</instructor>
+                <classtype type="lecture"/>
+                <day type="Tuesday"/>
+            </course>
+        </timeslots>
+    </days>
+    
+    <days type="Wednesday">
+        <timeslots type="3">
+            <course course="ACIT4660">
+                <room>SW9-206</room>
+                <instructor>Stephen Fabiszewski</instructor>
+                <classtype type="lab"/>
+                <day type="Wednesday"/>
+            </course>
+        </timeslots>
+        
+        <timeslots type="4">
+            <course course="ACIT4660">
+                <room>SW9-206</room>
+                <instructor>Stephen Fabiszewski</instructor>
+                <classtype type="lab"/>
+                <day type="Wednesday"/>
+            </course>
+        </timeslots>
+        
+        <timeslots type="5">
+            <course course="ACIT4850">
+                <room>SE12-320</room>
+                <instructor>Jim Parry</instructor>
+                <classtype type="lecture"/>
+                <day type="Wednesday"/>
+            </course>
+        </timeslots>
+        
+        <timeslots type="6">
+            <course course="ACIT4850">
+                <room>SE12-320</room>
+                <instructor>Jim Parry</instructor>
+                <classtype type="lecture"/>
+                <day type="Wednesday"/>
+            </course>
+        </timeslots>
+    </days>
+    
+    <days type="Thursday">
+        <timeslots type="2">
+            <course course="ACIT4910">
+                <room>SW5-1840</room>
+                <instructor>Richard Chau</instructor>
+                <classtype type="lecture"/>
+                <day type="Thursday"/>
+            </course>
+        </timeslots>
+    
+        <timeslots type="3">
+            <course course="ACIT4850">
+                <room>SE12-320</room>
+                <instructor>Jim Parry</instructor>
+                <classtype type="lab"/>
+                <day type="Thursday"/>
+            </course>
+        </timeslots>
+    
+        <timeslots type="4">
+            <course course="ACIT4850">
+                <room>SE12-320</room>
+                <instructor>Jim Parry</instructor>
+                <classtype type="lab"/>
+                <day type="Thursday"/>
+            </course>
+        </timeslots>
+    
+        <timeslots type="6">
+            <course course="ACIT4910">
+                <room>SE12-306</room>
+                <instructor>Richard Chau</instructor>
+                <classtype type="lab"/>
+                <day type="Thursday"/>
+            </course>
+        </timeslots>
+    
+        <timeslots type="7">
+            <course course="ACIT4910">
+                <room>SE12-306</room>
+                <instructor>Richard Chau</instructor>
+                <classtype type="lab"/>
+                <day type="Thursday"/>
+            </course>
+        </timeslots>
+        
+    </days>
+    
+    <days type="Friday">
+        <timeslots type="1">
+            <course course="ACIT4660">
+                <room>SW9-206</room>
+                <instructor>Stephen Fabiszewski</instructor>
+                <classtype type="lecture"/>
+                <day type="Friday"/>
+            </course>
+        </timeslots>
+    
+        <timeslots type="2">
+            <course course="ACIT4660">
+                <room>SW9-206</room>
+                <instructor>Stephen Fabiszewski</instructor>
+                <classtype type="lecture"/>
+                <day type="Friday"/>
+            </course>
+        </timeslots>
+    </days>
+    
+    
+    
+</timetable>
